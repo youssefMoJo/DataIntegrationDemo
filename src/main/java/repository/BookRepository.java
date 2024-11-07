@@ -23,19 +23,19 @@ public class BookRepository {
         }
     }
 
-    // public Book getBookById(int id) {
-    //     String query = "SELECT * FROM books WHERE id = ?";
-    //     try (Connection conn = DatabaseConnection.getConnection();
-    //          PreparedStatement stmt = conn.prepareStatement(query)) {
-    //         stmt.setInt(1, id);
-    //         ResultSet rs = stmt.executeQuery();
-    //         if (rs.next()) {
-    //             return new Book(rs.getInt("id"), rs.getString("title"), rs.getString("publication_date"), rs.getInt("author_id"));
-    //         }
-    //     } catch (SQLException e) {
-    //         e.printStackTrace();
-    //     }
-    //     return null;
-    // }
+    public Book getBookById(int id) {
+        String query = "SELECT * FROM books WHERE id = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return new Book(rs.getInt("id"), rs.getString("title"), rs.getString("publication_date"), rs.getInt("author_id"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 }

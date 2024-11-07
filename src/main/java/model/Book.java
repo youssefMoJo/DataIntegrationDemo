@@ -13,6 +13,10 @@ public class Book {
         this.authorId = authorId;
     }
 
+    public String toString() {
+        return "Book [id=" + id + ", title=" + title + ", publicationDate=" + publicationDate + ", authorId=" + authorId + "]";
+    }
+
     public int getId(){
         return id;
     }
