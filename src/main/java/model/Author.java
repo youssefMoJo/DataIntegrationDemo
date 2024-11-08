@@ -15,11 +15,19 @@ public class Author {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
 
     public String getBio() {
         return bio;
+    }
+
+    public String toString() {
+        return "Athor [id=" + id + ", name=" + name + ", bio=" + bio + "]";
     }
 }

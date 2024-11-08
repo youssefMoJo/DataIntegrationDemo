@@ -3,13 +3,11 @@ package main.java.repository;
 import main.java.model.Book;
 import main.java.config.DatabaseConnection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+
 import java.util.ArrayList;
 import java.util.List;
-
+ 
 public class BookRepository {
     public void insertBook(Book book) {
         String query = "INSERT INTO books (title, publication_date, author_id) VALUES (?, ?, ?)";
